@@ -58,6 +58,48 @@ const Navbar = () => {
           Contact
         </NavLink>
       </li>
+      <li className="text-[#BC986B]">
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "text-gray-400 border border-[#BC986B]"
+              : isPending
+              ? "pending"
+              : ""
+          }
+          to={"./allTouristsSport"}
+        >
+          All Tourists Spot
+        </NavLink>
+      </li>
+      <li className="text-[#BC986B]">
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "text-gray-400 border border-[#BC986B]"
+              : isPending
+              ? "pending"
+              : ""
+          }
+          to={"./addAllTouristsSpot"}
+        >
+          Add Tourists Spot
+        </NavLink>
+      </li>
+      <li className="text-[#BC986B]">
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "text-gray-400 border border-[#BC986B]"
+              : isPending
+              ? "pending"
+              : ""
+          }
+          to={"./mylist"}
+        >
+          My List
+        </NavLink>
+      </li>
 
     </>
   );

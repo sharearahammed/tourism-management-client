@@ -7,6 +7,7 @@ import AuthConfiguration from "./assets/Components/Authconfiguration/Authconfigu
 import { HelmetProvider } from "react-helmet-async";
 import Login from "./assets/Components/Login/Login.jsx";
 import Register from "./assets/Components/Register/Register.jsx";
+import AddTouristsSpot from "./assets/Components/AddTouristsSpot/AddTouristsSpot.jsx";
 import Home from "./assets/Components/Home/Home.jsx";
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register></Register>,
   },
+  {
+    path: "/addAllTouristsSpot",
+    element: <AddTouristsSpot></AddTouristsSpot>
+  }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
