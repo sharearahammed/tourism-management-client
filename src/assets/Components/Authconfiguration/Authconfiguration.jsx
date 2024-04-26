@@ -26,7 +26,7 @@ const AuthConfiguration = ({children}) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
-    const signUpUser = (email, password) =>{
+    const signInUser = (email, password) =>{
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
@@ -45,7 +45,7 @@ const AuthConfiguration = ({children}) => {
         } ;
     },[reload])
 
-    const authInfo = {setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,createUser,signUpUser,logOut};
+    const authInfo = {setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,createUser,signInUser,logOut};
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

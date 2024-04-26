@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
+import HomeTouristsSpots from "../HomeTouristsSpots/HomeTouristsSpots";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>
+      <HomeTouristsSpots></HomeTouristsSpots>
     </div>
   );
 };

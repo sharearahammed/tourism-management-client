@@ -86,14 +86,14 @@ const Register = () => {
         backgroundImage:
           "url(https://i.ibb.co/L1j3pgJ/erik-mclean-Q1-Gkffhfy6-M-unsplash.jpg)",
       }}
-      className=" bg-cover mt-16 flex flex-col justify-center font-[sans-serif] text-[#333] sm:h-screen p-4"
+      className="bg-cover mt-20 md:mt-28 flex flex-col justify-center font-[sans-serif] text-[#333]  p-4"
     >
       <Helmet>
         <title>Opulent Escapes Regester Page</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div className="text-center mb-12">
-        <h1 className="text-neutral-950 text-3xl font-bold">Please Signup</h1>
+      <div className="text-center lg:mb-12">
+        <h1 className="text-neutral-950 text-3xl md:text-2xl font-bold">Please Signup</h1>
       </div>
       <div className="max-w-md w-full mx-auto border border-gray-300 rounded-md p-6">
         <form onSubmit={handleSignup}>

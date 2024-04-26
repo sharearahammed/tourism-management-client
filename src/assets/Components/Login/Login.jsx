@@ -11,7 +11,7 @@ import Navbar from '../Navbar/Navbar';
 
 const Login = () => {
 
-    const { setReload,signUpUser,setUser,GoogleSignIn,GitHubSignIn } = useContext(AuthContext);
+    const { setReload,signInUser,setUser,GoogleSignIn,GitHubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showPassword ,  setShowPassword] = useState(false);
 
@@ -46,12 +46,12 @@ const Login = () => {
     console.log(email, password);
 
     // Login user
-    signUpUser(email, password)
+    signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        toast.success("User Login Successfully");
         navigate("/");
         setReload(true);
+        toast.success("User Login Successfully");
       })
       .catch((error) => {
         console.error(error.message);
@@ -66,7 +66,7 @@ const Login = () => {
           <div style={{
           backgroundImage:
             "url(https://i.ibb.co/D4LGLzY/jared-brashier-Doddr-Xp-Lw3-A-unsplash.jpg)",
-        }} className="mt-16 hero min-h-screen">
+        }} className="mt-20 hero min-h-screen">
           <div className="hero-overlay bg-opacity-60"></div>
           <Helmet>
         <title>Opulent Escapes Login Page</title>

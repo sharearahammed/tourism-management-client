@@ -1,6 +1,14 @@
+import Swal from 'sweetalert2'
+import Navbar from '../Navbar/Navbar';
+import { useContext } from 'react';
+import { AuthContext } from '../Authconfiguration/Authconfiguration';
 
 
 const AddTouristsSpot = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user);
+    // console.log(user.email);
+    
     const handleAddTouristSpot = e =>{
         e.preventDefault();
 
@@ -14,20 +22,40 @@ const AddTouristsSpot = () => {
         const seasonality = form.seasonality.value;
         const travelTime = form.travelTime.value;
         const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
-        const userEmail = form.userEmail.value;
-        const userName = form.userName.value;
         const photo = form.photo.value;
+        const email = user.email;
+        const name = user.displayName;
 
-        // const newCoffee = {touristsSpotName,countryName,location,shortDescription,averageCost,userEmail,seasonality,totaVisitorsPerYear,travelTime,userName,photo}
-        const add = {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,userEmail,userName,photo}
+        const addtouristsSpot = {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo,email,name};
 
-        console.log(add)
+        console.log(addtouristsSpot)
+
+        fetch(`http://localhost:5000/alltouristsSpot`,{
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(addtouristsSpot)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Tourists Spot Added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
+        })
 
     }
 
 
   return (
         <div className="bg-[#F4F3F0] p-24">
+            <Navbar></Navbar>
       <h2 className="text-center text-3xl font-extrabold mb-8"> Add a Tourists Spot</h2>
       <form onSubmit={handleAddTouristSpot}>
         {/* Form name and quantity row */}
@@ -103,14 +131,14 @@ const AddTouristsSpot = () => {
             <label className="label">
                 <span>User Email</span>
             </label>
-        <input type="text" name="userEmail" placeholder="Email" className="input input-bordered w-full" />
+        <input type="text" name="" placeholder="Email" defaultValue={user.email} className="input input-bordered w-full" />
         </div>
 
         <div className="md:w-1/2">
             <label className="label">
                 <span>User Name</span>
             </label>
-        <input type="text" name="userName" placeholder="Name" className="input input-bordered w-full" />
+        <input type="text" name="" defaultValue={user.displayName} placeholder="Name" className="input input-bordered w-full" />
         </div>
         </div>
 
