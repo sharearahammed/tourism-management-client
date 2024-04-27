@@ -53,7 +53,7 @@ const Banner = () => {
         <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome to Romazing - Where Romance <br /> Meets Amazing Adventures</h1>
         <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Indulge in breathtaking vistas, immerse yourself in vibrant cultures, and create timeless memories with Romazing. Explore our curated collection of dream destinations and let us ignite your passion for travel. Start your journey today!</p>
         <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL SPOTS</button>
-            </div> </SwiperSlide>
+            </div></SwiperSlide>
         
       </Swiper>
         </div>
