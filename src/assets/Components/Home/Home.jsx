@@ -18,7 +18,7 @@ const Home = () => {
       <HomeTouristsSpots></HomeTouristsSpots>
       <NextTrip></NextTrip>
       <ContactUs></ContactUs>
-      <Footer></Footer>
+      <Footer></Footer> 
     </div>
   );
 };
