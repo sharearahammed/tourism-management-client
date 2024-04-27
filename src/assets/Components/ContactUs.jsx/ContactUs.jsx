@@ -6,7 +6,7 @@ const ContactUs = () => {
             <h1 className="text-center font-extrabold text-4xl">Contact Us</h1>
             <p className="mt-3 text-center">Have questions or need assistance? We're here to help! Reach out to us for personalized travel advice, <br /> booking inquiries, or any other assistance you may need. Our dedicated team is ready to make your <br /> travel experience seamless and unforgettable. Get in touch with us today!</p>
             </div>
-            <section className=" bg-[url('https://i.ibb.co/sR71CC7/tourism-Contact-Cover.jpg')] min-h-screen bg-cover rounded-lg">
+            <section className="bg-[url('https://i.ibb.co/sR71CC7/tourism-Contact-Cover.jpg')] min-h-screen bg-cover rounded-lg">
     <div className="rounded-lg flex flex-col min-h-screen bg-black/60">
         <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
             <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
