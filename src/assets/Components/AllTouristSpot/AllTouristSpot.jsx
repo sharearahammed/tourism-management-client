@@ -9,7 +9,7 @@ const AllTouristSpot = () => {
         .then(data=>{
             console.log(data);
             setDatas(data);
-        })
+        }) 
     },[])
     return (
         <div className="justify-center items-center max-w-7xl mx-auto lg:grid md:grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 ">
