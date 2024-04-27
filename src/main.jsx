@@ -12,6 +12,8 @@ import UpdateTouristsSpot from "./assets/Components/UpdateTouristsSpot/UpdateTou
 import ViewDetails from "./assets/Components/HomeTouristsSpots/ViewDetails.jsx";
 import PrivatePortes from "./assets/Components/PrivatePortes/PrivatePortes.jsx";
 import MyList from "./assets/Components/MyList/MyList.jsx";
+import AllTouristSpot from "./assets/Components/AllTouristSpot/AllTouristSpot.jsx";
+import AllTouristSpotViewDetails from "./assets/Components/AllTouristSpot/AllTouristSpotViewDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
   {
     path: "/updateTouristsSpot/:id",
     element: <UpdateTouristsSpot></UpdateTouristsSpot>,
-    loader: ({params})=> fetch(`http://localhost:5000/singleTouristsSpot/${params.id}`)
+    loader: ({params})=> fetch(`http://localhost:5000/alltouristsSpot/${params.id}`)
   },
   {
     path : "/viewDetails/:id",
@@ -43,7 +45,16 @@ const router = createBrowserRouter([
   {
     path: "/mylist",
     element: <PrivatePortes><MyList></MyList></PrivatePortes> 
-  }
+  },
+  {
+    path: "/allTouristSpot",
+    element: <AllTouristSpot></AllTouristSpot>
+  },
+  {
+    path : "/allTouristSpotViewDetails/:id",
+    element: <AllTouristSpotViewDetails></AllTouristSpotViewDetails>,
+    loader: ({params})=>fetch(`http://localhost:5000/alltouristsSpot/${params.id}`)
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

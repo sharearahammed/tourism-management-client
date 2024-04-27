@@ -6,6 +6,7 @@ import Navbar from "../Navbar/Navbar";
 const ViewDetails = () => {
     const viewTouristsSpots = useLoaderData();
     const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = viewTouristsSpots;
+    console.log(viewTouristsSpots)
 
     return (
         <div className="py-8">

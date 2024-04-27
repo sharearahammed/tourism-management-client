@@ -22,8 +22,6 @@ const MyList = () => {
       });
   }, [user,toggle]);
 
-
-
   const handleDelete = (email)=>{
     Swal.fire({
         title: "Are you sure?",
@@ -86,10 +84,10 @@ const MyList = () => {
                 <td className="border">{data.countryName}</td>
                 <td className="border">{data.location}</td>
                 <td  className="flex gap-2">
-                    <Link className="btn bg-green-500 text-white text-[20px]" to={`/updateTouristsSpot/${datas._id}`}>
+                    <Link className="btn bg-green-500 text-white text-[20px]" to={`/updateTouristsSpot/${data._id}`}>
                     <GrEdit /></Link>
                     
-                    <button onClick={()=>handleDelete(data._id)} className="btn bg-red-500 text-white text-[20px]"><RiDeleteBin5Line /></button>
+                    <button onClick={()=>handleDelete(data.email)} className="btn bg-red-500 text-white text-[20px]"><RiDeleteBin5Line /></button>
                 </td>
               </tr>)
           }

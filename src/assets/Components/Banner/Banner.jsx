@@ -28,31 +28,31 @@ const Banner = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="rounded-lg mySwiper"
       >
-        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/KqpxvnY/todd-kent-178j8t-Jr-Nlc-unsplash.jpg")',
+        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/3hx7cGF/T4.jpg")',
      }}><div className='w-[900px]'>
-     <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome Home to Comfort & Style! <br /> Explore Our Premier Residential Living Experience Today.</h1>
-     <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Welcome to a residential oasis where comfort meets sophistication. Our community offers the perfect balance between modern convenience and serene living. Explore our inviting spaces, designed to make every moment feel like home. Embrace the lifestyle you deserve, where relaxation and luxury intertwine seamlessly. Welcome to your new haven.</p>
-     <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL PROPERTIES</button>
+     <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome to Romazing - Where Romance <br /> Meets Amazing Adventures</h1>
+     <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Indulge in breathtaking vistas, immerse yourself in vibrant cultures, and create timeless memories with Romazing. Explore our curated collection of dream destinations and let us ignite your passion for travel. Start your journey today!</p>
+     <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL SPOTS</button>
          </div></SwiperSlide>
 
 
-        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/H2SvzMJ/frames-for-your-heart-2d4l-AQAlb-DA-unsplash.jpg")' }}><div className='w-[900px]'>
-        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome Home to Comfort & Style! <br /> Explore Our Premier Residential Living Experience Today.</h1>
-        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Welcome to a residential oasis where comfort meets sophistication. Our community offers the perfect balance between modern convenience and serene living. Explore our inviting spaces, designed to make every moment feel like home. Embrace the lifestyle you deserve, where relaxation and luxury intertwine seamlessly. Welcome to your new haven.</p>
-        <button className='btn text-white border-[#BC986B] bg-[#BC986B]'>VIEW ALL PROPERTIES</button>
+        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/8xhtVnH/T3.jpg")' }}><div className='w-[900px]'>
+        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome to Romazing - Where Romance <br /> Meets Amazing Adventures</h1>
+        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Indulge in breathtaking vistas, immerse yourself in vibrant cultures, and create timeless memories with Romazing. Explore our curated collection of dream destinations and let us ignite your passion for travel. Start your journey today!</p>
+        <button className='btn text-white border-[#BC986B] bg-[#BC986B]'>VIEW ALL SPOTS</button>
             </div></SwiperSlide>
 
 
-        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/pwKrbfN/andre-francois-mckenzie-08u-IUe2a9-XY-unsplash.jpg")' }}><div className='w-[900px]'>
-        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome Home to Comfort & Style! <br /> Explore Our Premier Residential Living Experience Today.</h1>
-        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Welcome to a residential oasis where comfort meets sophistication. Our community offers the perfect balance between modern convenience and serene living. Explore our inviting spaces, designed to make every moment feel like home. Embrace the lifestyle you deserve, where relaxation and luxury intertwine seamlessly. Welcome to your new haven.</p>
-        <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL PROPERTIES</button>
+        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/Rbm6CNm/T2.jpg")' }}><div className='w-[900px]'>
+        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome to Romazing - Where Romance <br /> Meets Amazing Adventures</h1>
+        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Indulge in breathtaking vistas, immerse yourself in vibrant cultures, and create timeless memories with Romazing. Explore our curated collection of dream destinations and let us ignite your passion for travel. Start your journey today!</p>
+        <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL SPOTS</button>
             </div></SwiperSlide>
 
-        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/bbjGxNM/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg")' }}><div className='w-[900px]'>
-        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome Home to Comfort & Style! <br /> Explore Our Premier Residential Living Experience Today.</h1>
-        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Welcome to a residential oasis where comfort meets sophistication. Our community offers the perfect balance between modern convenience and serene living. Explore our inviting spaces, designed to make every moment feel like home. Embrace the lifestyle you deserve, where relaxation and luxury intertwine seamlessly. Welcome to your new haven.</p>
-        <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL PROPERTIES</button>
+        <SwiperSlide className='hero min-h-screen rounded-sm bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://i.ibb.co/ZJP9HtG/T1.jpg")' }}><div className='w-[900px]'>
+        <h1 className='animate__animated animate__fadeInDown mb-4 text-xl md:text-2xl lg:text-4xl text-white text-center font-bold'>Welcome to Romazing - Where Romance <br /> Meets Amazing Adventures</h1>
+        <p className='mb-3 text-white text-[12px] lg:text-[18px] p-9 lg:p-0'>Indulge in breathtaking vistas, immerse yourself in vibrant cultures, and create timeless memories with Romazing. Explore our curated collection of dream destinations and let us ignite your passion for travel. Start your journey today!</p>
+        <button className='btn border-[#BC986B] text-white bg-[#BC986B]'>VIEW ALL SPOTS</button>
             </div></SwiperSlide>
         
       </Swiper>

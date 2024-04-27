@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
-import { IoLocationOutline } from "react-icons/io5";
-import { TiWeatherPartlySunny } from "react-icons/ti";
-import { Link } from "react-router-dom";
-const TouristsSpotsCard = ({touristsSpot}) => {
-    const {_id,touristsSpotName,countryName,location,seasonality,photo} = touristsSpot;
+
+import { IoLocationOutline } from 'react-icons/io5';
+import { TiWeatherPartlySunny } from 'react-icons/ti';
+import { Link } from 'react-router-dom';
+import Navbar from '../Navbar/Navbar';
+
+const AllTouristSpotCard = ({data}) => {
+    const {_id,touristsSpotName,countryName,location,seasonality,photo} = data;
     return (
-        <div className="p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-auto">
+        <div>
+            <Navbar></Navbar>
+            <div className="mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-auto">
             <img src={photo}
                     alt="Product" className="h-80 w-full object-cover rounded-t-xl" />
             <div className="px-4 py-3">
@@ -28,11 +33,12 @@ const TouristsSpotsCard = ({touristsSpot}) => {
                     {seasonality}
                     </div>
                 </div>
-                <Link to={`/viewDetails/${_id}`}><button className="bg-[#BC986B] text-white mt-3 btn">View Details</button></Link>
+                <Link to={`/allTouristSpotViewDetails/${_id}`}><button className="mt-3 btn">View Details</button></Link>
+                
             </div>
     </div>
-            
+        </div>
     );
 };
 
-export default TouristsSpotsCard;
+export default AllTouristSpotCard;

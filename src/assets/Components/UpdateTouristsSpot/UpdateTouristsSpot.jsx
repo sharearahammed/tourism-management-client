@@ -1,17 +1,20 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Swal from "sweetalert2";
-import { useState } from "react";
-
-
+import { useEffect, useState } from "react";
 
 const UpdateTouristsSpot = () => {
-    const Spot = useLoaderData()
+  const{id} = useParams();
+  console.log(id)
+    const touristsSpot = useLoaderData()
+    const [ singleData , setSingleData ]= useState({})
+    useEffect(()=>{
+      const singleData = touristsSpot.find(item=>item._id == id);
+      setSingleData(singleData)
+    },[id, touristsSpot])
 
-    const {email,touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,userEmail,userName,photo} = Spot;
-
-    console.log('spot: ',Spot)
-    console.log(countryName)
+    console.log(singleData)
+    const {_id,touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = singleData;
 
     const handleUpdateTouristSpot = e =>{
         e.preventDefault();
@@ -32,7 +35,7 @@ const UpdateTouristsSpot = () => {
 
         console.log(UpdatetouristsSpot)
 
-        fetch(`http://localhost:5000/alltouristsSpot/${email}`,{
+        fetch(`http://localhost:5000/alltouristsSpot/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -45,11 +48,10 @@ const UpdateTouristsSpot = () => {
             if(data.modifiedCount > 0){
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Coffee Updated Successfully',
+                    text: 'Tourists Spot Updated Successfully',
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
-                  // setData(data)
             }
         })
 
@@ -86,8 +88,8 @@ const UpdateTouristsSpot = () => {
             <input
               type="text"
               name="countryName"
-              defaultValue={countryName}
               placeholder="Country Name"
+              defaultValue={countryName}
               className="input input-bordered w-full"
             />
           </div>
@@ -102,6 +104,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="location"
               placeholder="location"
+              defaultValue={location}
               className="input input-bordered w-full"
             />
           </div>
@@ -114,6 +117,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="shortDescription"
               placeholder="description"
+              defaultValue={shortDescription}
               className="input input-bordered w-full"
             />
           </div>
@@ -129,6 +133,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="averageCost"
               placeholder="Cost"
+              defaultValue={averageCost}
               className="input input-bordered w-full"
             />
           </div>
@@ -141,6 +146,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="seasonality"
               placeholder="Seasonality"
+              defaultValue={seasonality}
               className="input input-bordered w-full"
             />
           </div>
@@ -156,6 +162,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="travelTime"
               placeholder="Travel Time"
+              defaultValue={travelTime}
               className="input input-bordered w-full"
             />
           </div>
@@ -168,6 +175,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="totaVisitorsPerYear"
               placeholder="Total Visitors Per Year"
+              defaultValue={totaVisitorsPerYear}
               className="input input-bordered w-full"
             />
           </div>
@@ -183,6 +191,7 @@ const UpdateTouristsSpot = () => {
               type="text"
               name="photo"
               placeholder="Photo Url"
+              defaultValue={photo}
               className="input input-bordered w-full"
             />
           </div>

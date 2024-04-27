@@ -40,7 +40,7 @@ const Navbar = () => {
               ? "pending"
               : ""
           }
-          to={"/allTouristsSport"}
+          to={"/allTouristSpot"}
         >
           All Tourists Spot
         </NavLink>
@@ -88,7 +88,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="text-pink-600 btn btn-ghost text-xl">daisyUI</a>
+    <div className=""><img className="h-[55px]" src="/Roamazing.svg" alt="" /></div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

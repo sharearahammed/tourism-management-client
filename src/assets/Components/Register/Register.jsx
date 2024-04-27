@@ -84,7 +84,7 @@ const Register = () => {
       <div
       style={{
         backgroundImage:
-          "url(https://i.ibb.co/L1j3pgJ/erik-mclean-Q1-Gkffhfy6-M-unsplash.jpg)",
+          "url(https://i.ibb.co/GtZcrKV/reg-Page-Cover.jpg)",
       }}
       className="bg-cover mt-20 md:mt-28 flex flex-col justify-center font-[sans-serif] text-[#333]  p-4"
     >
@@ -93,13 +93,13 @@ const Register = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="text-center lg:mb-12">
-        <h1 className="text-neutral-950 text-3xl md:text-2xl font-bold">Please Signup</h1>
+        <h1 className="text-white text-xl md:text-2xl lg:text-4xl font-bold">Please Signup</h1>
       </div>
       <div className="max-w-md w-full mx-auto border border-gray-300 rounded-md p-6">
         <form onSubmit={handleSignup}>
           <div className="space-y-6">
             <div>
-              <label className="text-sm mb-2 block text-gray-400">Name</label>
+              <label className="text-sm mb-2 block text-white">Name</label>
               <input
                 name="name"
                 type="text"
@@ -110,7 +110,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="text-gray-400 text-sm mb-2 block">Email</label>
+              <label className="text-white text-sm mb-2 block">Email</label>
               <input
                 name="email"
                 type="text"
@@ -121,7 +121,7 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="text-gray-400 text-sm mb-2 block">Photo Url</label>
+              <label className="text-white text-sm mb-2 block">Photo Url</label>
               <input
                 name="upload"
                 type="text"
@@ -132,7 +132,7 @@ const Register = () => {
             </div>
 
             <div className="relative">
-              <label className="text-gray-400 text-sm mb-2 block">Password</label>
+              <label className="text-white text-sm mb-2 block">Password</label>
               <input
                 className="  bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                 type={showPassword ? "text" : "password"}
