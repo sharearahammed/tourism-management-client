@@ -8,7 +8,7 @@ const NextTrip = () => {
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4 text-center">
           {/* One */}
-          <div className=" p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/LrFNXjk/advanture.webp" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900">
