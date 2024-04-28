@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-gray-400 border border-[#BC986B]"
+              ? "text-gray-400 font-bold border border-[#BC986B]"
               : isPending
               ? "pending"
               : ""
@@ -39,7 +39,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-gray-400 border border-[#BC986B]"
+              ? "text-gray-400 font-bold border border-[#BC986B]"
               : isPending
               ? "pending"
               : ""
@@ -53,7 +53,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-gray-400 border border-[#BC986B]"
+              ? "text-gray-400 font-bold border border-[#BC986B]"
               : isPending
               ? "pending"
               : ""
@@ -67,7 +67,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-gray-400 border border-[#BC986B]"
+              ? "text-gray-400 font-bold border border-[#BC986B]"
               : isPending
               ? "pending"
               : ""
@@ -75,6 +75,20 @@ const Navbar = () => {
           to={"/mylist"}
         >
           My List
+        </NavLink>
+      </li>
+      <li className="block lg:hidden text-blue-500">
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "text-blue-700 font-bold border border-[#BC986B]"
+              : isPending
+              ? "pending"
+              : ""
+          }
+          to={"/register"}
+        >
+          Register
         </NavLink>
       </li>
 
@@ -92,7 +106,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <div className="mr-4">
+    <div className="mr-4 h-[55px]">
     <Bounce>
     <img className="h-[55px]" src="/Roamazing.svg" alt="" />
     </Bounce>
@@ -123,20 +137,21 @@ const Navbar = () => {
       </div>
       }
     
-    <div>
+    <div className="mr-5">
     {
-            user ? <div onClick={logout} className="btn bg-red-600 text-white text-[8px] lg:text-[14px]">
+            user ? <div onClick={logout} className=" btn bg-red-600 text-white text-[8px] lg:text-[14px]">
               Sign Out
           </div>
           :
           <div className="flex">
             <Link
-              className="btn bg-[#BC986B] hover:bg-slate-400 text-white text-[8px] lg:text-[14px]"
+              className="btn bg-[#BC986B] text-white hover:bg-slate-400 text-[8px] lg:text-[14px]"
               to={"/login"}
             >
-              Sign In
+              <button className="">Sign In</button>
             </Link>
-            <Link to="/register" className="ml-3 btn">Register</Link>
+            <div className="hidden lg:block">
+            <Link to="/register" className=" ml-3 mr-8 btn hover:bg-slate-400">Register</Link></div> 
           </div>
           }
     </div>

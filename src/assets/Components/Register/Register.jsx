@@ -8,8 +8,10 @@ import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 const Register = () => {
+  const {user} = useContext(AuthContext)
   const { createUser, logOut } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -79,8 +81,12 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="dark:bg-slate-800">
       <Navbar></Navbar>
+      <Helmet>
+        <title>Roamazing Register</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div
       style={{
         backgroundImage:
@@ -88,10 +94,6 @@ const Register = () => {
       }}
       className="bg-cover mt-20 md:mt-28 flex flex-col justify-center font-[sans-serif] text-[#333]  p-4"
     >
-      <Helmet>
-        <title>Opulent Escapes Regester Page</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
-      </Helmet>
       <div className="text-center lg:mb-12">
         <h1 className="text-white text-xl md:text-2xl lg:text-4xl font-bold">Please Signup</h1>
       </div>
@@ -177,20 +179,22 @@ const Register = () => {
         </form>
         <p className="text-white text-sm mt-6 text-center">
           Already have an account?{" "}
-          <Link to={"/login"}>
-            <a
-              href="javascript:void(0);"
-              className="text-blue-600 font-semibold underline ml-1"
-            >
+          {
+            user ? 
+            <Link className="text-blue-600 font-semibold underline ml-1" to={"/"}>
               Signin here
-            </a>
-          </Link>
+          </Link> : 
+          <Link className="text-blue-600 font-semibold underline ml-1" to={"/login"}>
+          Signin here
+      </Link>
+          }
         </p>
 
         {error && <p className="text-red-600">{error}</p>}
       </div>
       <ToastContainer />
     </div>
+    <Footer></Footer>
     </div>
   );
 };

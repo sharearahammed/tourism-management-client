@@ -4,6 +4,8 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import { IoIosArrowDown } from "react-icons/io";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
@@ -79,8 +81,14 @@ const AddTouristsSpot = () => {
   };
 
   return (
-    <div className="dark:bg-slate-800 dark:text-white bg-[#F4F3F0] p-3 lg:p-24">
+    <div className="dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>
+      <div className=" dark:bg-slate-800 dark:text-white bg-[#F4F3F0] mt-20 p-3 lg:p-24">
+      
+      <Helmet>
+        <title>Roamazing Add Tourist Spot</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h2 className="text-center text-3xl font-extrabold mb-8">
         {" "}
         Add a Tourists Spot
@@ -334,6 +342,8 @@ const AddTouristsSpot = () => {
           />
         </div>
       </form>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

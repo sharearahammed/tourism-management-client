@@ -4,6 +4,7 @@ import { PiCurrencyDollarBold } from "react-icons/pi";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Slide } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 
 const ViewDetails = () => {
     const viewTouristsSpots = useLoaderData();
@@ -13,6 +14,10 @@ const ViewDetails = () => {
     return (
         <div className="dark:bg-slate-800 dark:text-white py-8">
             <Navbar></Navbar>
+            <Helmet>
+        <title>Roamazing Spot Details</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
             <Slide>
             <div className="mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">

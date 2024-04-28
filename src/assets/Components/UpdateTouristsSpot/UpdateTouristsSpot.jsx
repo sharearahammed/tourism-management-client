@@ -2,6 +2,8 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 const UpdateTouristsSpot = () => {
   const{id} = useParams();
@@ -59,8 +61,13 @@ const UpdateTouristsSpot = () => {
     }
 
   return (
-    <div className="bg-[#F4F3F0] dark:bg-slate-800 dark:text-white p-24">
+    <div className="dark:bg-slate-800">
+      <div className="bg-[#F4F3F0] dark:bg-slate-800 dark:text-white p-5 mt-20 lg:p-24">
         <Navbar></Navbar>
+        <Helmet>
+        <title>Roamazing Update Tourist Spot</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <h2 className="text-center text-3xl font-extrabold mb-8">
         {" "}
         Update a Tourists Spot
@@ -77,7 +84,7 @@ const UpdateTouristsSpot = () => {
               name="touristsSpotName"
               placeholder="Tourists Spot Name"
               defaultValue={touristsSpotName}
-              className="dark:text-black input dark:text-black input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
 
@@ -205,6 +212,8 @@ const UpdateTouristsSpot = () => {
           />
         </div>
       </form>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

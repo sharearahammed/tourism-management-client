@@ -12,7 +12,7 @@ const Home = () => {
     <div className="dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>
       <Helmet>
-        <title>Opulent Escapes Home</title>
+        <title>Roamazing Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>

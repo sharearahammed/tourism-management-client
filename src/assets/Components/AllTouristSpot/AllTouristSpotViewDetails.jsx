@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet";
 
 const AllTouristSpotViewDetails = () => {
   const { id } = useParams();
@@ -30,6 +31,10 @@ const AllTouristSpotViewDetails = () => {
   return (
     <div className="dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>
+      <Helmet>
+        <title>Roamazing ViewDetails</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className=" dark:bg-slate-800 py-8 mt-14 lg:mt-22 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">

@@ -5,6 +5,8 @@ import { RiDeleteBin5Line } from "react-icons/ri";
 import Navbar from "../Navbar/Navbar";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import Footer from "../Footer/Footer";
 
 const MyList = () => {
   const [datas, setDatas] = useState([]);
@@ -60,8 +62,13 @@ const MyList = () => {
       });
   }
   return (
-    <div className="dark:bg-slate-800 overflow-x-auto">
+    <div className="dark:bg-slate-800 ">
+      <div className="dark:bg-slate-800 overflow-x-auto">
         <Navbar></Navbar>
+        <Helmet>
+        <title>Roamazing MyList</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <table className="mt-24 table">
         {/* head */}
         <thead>
@@ -93,6 +100,8 @@ const MyList = () => {
           }
         </tbody>
       </table>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

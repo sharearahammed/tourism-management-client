@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { IoLocationOutline } from "react-icons/io5";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // eslint-disable-next-line react/prop-types
 const Cards = ({country}) => {
@@ -10,7 +11,11 @@ const Cards = ({country}) => {
     return (
         <div>
       <Navbar></Navbar>
-      <div className="dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0 dark:bg-slate-800 bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl h-auto">
+      <Helmet>
+        <title>Roamazing Country Spots</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+      <div className="dark:bg-slate-800 dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0  bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl h-auto">
         <img
           src={photo}
           alt="Product"
