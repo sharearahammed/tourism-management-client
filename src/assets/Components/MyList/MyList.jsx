@@ -14,7 +14,7 @@ const MyList = () => {
   }
   const { user } = useContext(AuthContext) || {};
   useEffect(() => {
-    fetch(`http://localhost:5000/alltouristsSpot/${user?.email}`)
+    fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,7 @@ const MyList = () => {
       });
   }, [user,toggle]);
 
-  const handleDelete = (email)=>{
+  const handleDelete = (id)=>{
     Swal.fire({
         title: "Are you sure?",
         text: "You won't be able to revert this!",
@@ -39,7 +39,7 @@ const MyList = () => {
           //   icon: "success"
           // });
           // console.log('delete confirm')
-          fetch(`http://localhost:5000/alltouristsSpot/${email}`,{
+          fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${id}`,{
             method: "DELETE"
         })
         .then(res=>res.json())
@@ -60,7 +60,7 @@ const MyList = () => {
       });
   }
   return (
-    <div className="overflow-x-auto">
+    <div className="dark:bg-slate-800 overflow-x-auto">
         <Navbar></Navbar>
       <table className="mt-24 table">
         {/* head */}
@@ -77,7 +77,7 @@ const MyList = () => {
         <tbody>
           {/* row 1 */}
           {
-            datas.map((data,idx)=><tr className="" key={data._id}>
+            datas.map((data,idx)=><tr className="dark:text-white" key={data._id}>
                 <th>{idx+1}.</th>
                 <td className="border">{user.email}</td>
                 <td className="border">{data.touristsSpotName}</td>
@@ -87,7 +87,7 @@ const MyList = () => {
                     <Link className="btn bg-green-500 text-white text-[20px]" to={`/updateTouristsSpot/${data._id}`}>
                     <GrEdit /></Link>
                     
-                    <button onClick={()=>handleDelete(data.email)} className="btn bg-red-500 text-white text-[20px]"><RiDeleteBin5Line /></button>
+                    <button onClick={()=>handleDelete(data._id)} className="btn bg-red-500 text-white text-[20px]"><RiDeleteBin5Line /></button>
                 </td>
               </tr>)
           }

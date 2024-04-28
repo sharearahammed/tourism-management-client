@@ -1,20 +1,14 @@
-import { useLoaderData } from "react-router-dom";
-import { IoLocationOutline } from "react-icons/io5";
 import { PiCurrencyDollarBold } from "react-icons/pi";
 import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
-import { Slide } from "react-awesome-reveal";
+import { IoLocationOutline } from "react-icons/io5";
 
-const ViewDetails = () => {
-    const viewTouristsSpots = useLoaderData();
-    const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = viewTouristsSpots;
-    console.log(viewTouristsSpots)
-
+// eslint-disable-next-line react/prop-types
+const Cards = ({country}) => {
+    const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = country || {};
     return (
-        <div className="dark:bg-slate-800 dark:text-white py-8">
+        <div className="border py-8">
             <Navbar></Navbar>
-            <Slide>
-            <div className="mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
                 <div className="h-[460px] rounded-lg mb-4">
@@ -63,12 +57,8 @@ const ViewDetails = () => {
             </div>
         </div>
     </div>
-            </Slide>
-    
-    <Footer></Footer>
 </div>
-
     );
 };
 
-export default ViewDetails;
+export default Cards;

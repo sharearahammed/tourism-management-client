@@ -5,10 +5,11 @@ import HomeTouristsSpots from "../HomeTouristsSpots/HomeTouristsSpots";
 import ContactUs from "../ContactUs.jsx/ContactUs";
 import NextTrip from "../NextTripCard/NextTrip";
 import Footer from "../Footer/Footer";
+import Country from "../Country/Country";
 
 const Home = () => {
   return (
-    <div>
+    <div className="dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>
       <Helmet>
         <title>Opulent Escapes Home</title>
@@ -16,10 +17,11 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <HomeTouristsSpots></HomeTouristsSpots>
+      <Country></Country>
       <NextTrip></NextTrip>
       <ContactUs></ContactUs>
-      <Footer></Footer> 
-    </div>
+      <Footer></Footer>
+    </div> 
   );
 };
 

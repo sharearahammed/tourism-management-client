@@ -17,7 +17,7 @@ const AllTouristSpotViewDetails = () => {
     const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = data;
     console.log(data)
     return (
-        <div className="py-8">
+        <div className="py-8 dark:bg-slate-800 dark:text-white">
         <Navbar></Navbar>
 <div className="mt-16 lg:mt-28 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div className="flex flex-col md:flex-row -mx-4">
@@ -28,13 +28,13 @@ const AllTouristSpotViewDetails = () => {
             
         </div>
         <div className="md:flex-1 px-4">
-            <h2 className="text-3xl font-bold mb-2">Tourists Spot Name: {touristsSpotName}</h2>
+            <h2 className="text-3xl font-bold mb-2 dark:text-white ">Tourists Spot Name: {touristsSpotName}</h2>
             <h3 className="text-xl font-bold mb-2">Country Name: {countryName}</h3>
 
             <div className="mt-7 flex">
             <div className="mr-4 mb-5 flex items-center gap-6">
                     <span className="text-[20px] font-bold "><IoLocationOutline /></span>
-                    <span className="">{location}</span>
+                    <span className="dark:text-white">{location}</span>
                 </div>
                 <div className="mr-4 mb-5 flex items-center gap-6">
                     <span className="font-bold "><PiCurrencyDollarBold /></span>

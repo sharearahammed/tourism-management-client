@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import { useContext } from "react";
+import DarkMode from "../DarkMode/DarkMode";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
+import { Bounce } from "react-awesome-reveal";
 
 
 const Navbar = () => {
@@ -77,7 +81,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="bg-transparent bg-base-100 shadow-5-strong lg:px-[120px] navbar flex-no-wrap fixed top-0 right-0 left-0 z-10 flex">
+    <div className="dark:bg-slate-800 bg-transparent bg-base-100 shadow-5-strong lg:px-[120px] navbar flex-no-wrap fixed top-0 right-0 left-0 z-10 flex">
       <div className="navbar">
   <div className="navbar-start">
     <div className="dropdown">
@@ -88,7 +92,11 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <div className=""><img className="h-[55px]" src="/Roamazing.svg" alt="" /></div>
+    <div className="mr-4">
+    <Bounce>
+    <img className="h-[55px]" src="/Roamazing.svg" alt="" />
+    </Bounce>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -99,7 +107,10 @@ const Navbar = () => {
   <div className="navbar-end">
   
       {user ? (
-        <div className="hover:tooltip hover:tooltip-open hover:tooltip-bottom" data-tip={user.displayName}>
+        <div   data-tooltip-id="my-tooltip"
+        data-tooltip-content={user.displayName}
+        data-tooltip-place="top">
+          <Tooltip id="my-tooltip" />
         <div tabIndex={0} role="button" className=" btn btn-ghost btn-circle avatar">
         <div className="w-11 rounded-full">
           <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
@@ -129,6 +140,7 @@ const Navbar = () => {
           </div>
           }
     </div>
+    <div><DarkMode></DarkMode></div>
     
   </div>
 </div>

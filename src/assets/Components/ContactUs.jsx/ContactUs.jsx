@@ -4,19 +4,17 @@ const ContactUs = () => {
         <div className="max-w-7xl mx-auto">
             <div className="mb-16">
             <h1 className="text-center font-extrabold text-4xl">Contact Us</h1>
-            <p className="mt-3 text-center">Have questions or need assistance? We're here to help! Reach out to us for personalized travel advice, <br /> booking inquiries, or any other assistance you may need. Our dedicated team is ready to make your <br /> travel experience seamless and unforgettable. Get in touch with us today!</p>
+            <p className="mt-3 text-center"></p>
             </div>
             <section className="bg-[url('https://i.ibb.co/sR71CC7/tourism-Contact-Cover.jpg')] min-h-screen bg-cover rounded-lg">
     <div className="rounded-lg flex flex-col min-h-screen bg-black/60">
         <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
             <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
                 <div className="text-white lg:w-1/2 lg:mx-6">
-                    <h1 className="text-2xl font-semibold capitalize lg:text-3xl">Ultimate design solution</h1>
+                    <h1 className="text-2xl font-semibold capitalize lg:text-3xl">Contact</h1>
 
                     <p className="max-w-xl mt-6">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo
-                        aliquid molestiae hic incidunt beatae placeat accusantium! Alias ex quisquam ab tempora. Ratione
-                        autem doloremque ducimus numquam doloribus, error sed.
+                    Have questions or need assistance? We're here to help! Reach out to us for personalized travel advice, <br /> booking inquiries, or any other assistance you may need. Our dedicated team is ready to make your <br /> travel experience seamless and unforgettable. Get in touch with us today!
                     </p>
 
                     <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
