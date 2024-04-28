@@ -13,3 +13,6 @@ You can visit the live site [here](https://stately-alfajores-f0a540.netlify.app)
 - Destination Information: Provide detailed information about tourist destinations.
 - Emergency Information: Provide emergency contact numbers, healthcare facilities, and safety tips to ensure travelers' well-being during their trips.ss
 - Add Tourists Spot and Update: Create a Tourists Spot of tourism place and Update.
+
+### My selected category Name is Southeast Asia.
+Sub-Category's are Bangladesh,Thailand,Indonesia,Malaysia,Vietnam
