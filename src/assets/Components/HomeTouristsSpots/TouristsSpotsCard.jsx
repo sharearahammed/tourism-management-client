@@ -8,7 +8,7 @@ const TouristsSpotsCard = ({touristsSpot}) => {
     console.log(touristsSpot)
     console.log('...................')
     return (
-        <div className="border p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-auto">
+        <div className="border p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-[620px]">
             <img src={photo}
                     alt="Product" className="h-80 w-full object-cover rounded-t-xl" />
             <div className="px-4 py-3">
@@ -31,7 +31,7 @@ const TouristsSpotsCard = ({touristsSpot}) => {
                     {seasonality}
                     </div>
                 </div>
-                <Link to={`/viewDetails/${_id}`}><button className="bg-[#BC986B] text-white mt-3 btn">View Details</button></Link>
+                <Link to={`/viewDetails/${_id}`}><button className="bg-[#BC986B] text-white mt-3 btn ">View Details</button></Link>
             </div>
     </div>
             
