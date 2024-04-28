@@ -15,7 +15,7 @@ const CountryTouristSpot = () => {
     },[id])
     console.log(countrys)
     return (
-        <div className="mt-16 flex flex-col gap-7 p-7">
+        <div className="dark:bg-slate-800 dark:text-white justify-center items-center lg:grid md:grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 mt-16 flex flex-col p-7">
             {
                 countrys.map(country=><Cards key={country._id}
                     country={country}

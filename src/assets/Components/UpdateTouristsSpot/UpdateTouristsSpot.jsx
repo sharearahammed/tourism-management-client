@@ -59,7 +59,7 @@ const UpdateTouristsSpot = () => {
     }
 
   return (
-    <div className="bg-[#F4F3F0] p-24">
+    <div className="bg-[#F4F3F0] dark:bg-slate-800 dark:text-white p-24">
         <Navbar></Navbar>
       <h2 className="text-center text-3xl font-extrabold mb-8">
         {" "}
@@ -77,7 +77,7 @@ const UpdateTouristsSpot = () => {
               name="touristsSpotName"
               placeholder="Tourists Spot Name"
               defaultValue={touristsSpotName}
-              className="input input-bordered w-full"
+              className="dark:text-black input dark:text-black input-bordered w-full"
             />
           </div>
 
@@ -90,7 +90,7 @@ const UpdateTouristsSpot = () => {
               name="countryName"
               placeholder="Country Name"
               defaultValue={countryName}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ const UpdateTouristsSpot = () => {
               name="location"
               placeholder="location"
               defaultValue={location}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
 
@@ -118,7 +118,7 @@ const UpdateTouristsSpot = () => {
               name="shortDescription"
               placeholder="description"
               defaultValue={shortDescription}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
         </div>
@@ -134,7 +134,7 @@ const UpdateTouristsSpot = () => {
               name="averageCost"
               placeholder="Cost"
               defaultValue={averageCost}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
 
@@ -147,7 +147,7 @@ const UpdateTouristsSpot = () => {
               name="seasonality"
               placeholder="Seasonality"
               defaultValue={seasonality}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
         </div>
@@ -163,7 +163,7 @@ const UpdateTouristsSpot = () => {
               name="travelTime"
               placeholder="Travel Time"
               defaultValue={travelTime}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
 
@@ -176,7 +176,7 @@ const UpdateTouristsSpot = () => {
               name="totaVisitorsPerYear"
               placeholder="Total Visitors Per Year"
               defaultValue={totaVisitorsPerYear}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
         </div>
@@ -192,7 +192,7 @@ const UpdateTouristsSpot = () => {
               name="photo"
               placeholder="Photo Url"
               defaultValue={photo}
-              className="input input-bordered w-full"
+              className="input dark:text-black input-bordered w-full"
             />
           </div>
         </div>

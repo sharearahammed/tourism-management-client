@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import { IoIosArrowDown } from "react-icons/io";
+import { toast } from "react-toastify";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
@@ -78,7 +79,7 @@ const AddTouristsSpot = () => {
   };
 
   return (
-    <div className="dark:bg-slate-800 bg-[#F4F3F0] p-3 lg:p-24">
+    <div className="dark:bg-slate-800 dark:text-white bg-[#F4F3F0] p-3 lg:p-24">
       <Navbar></Navbar>
       <h2 className="text-center text-3xl font-extrabold mb-8">
         {" "}
@@ -289,7 +290,7 @@ const AddTouristsSpot = () => {
               name=""
               placeholder="Email"
               defaultValue={user.email}
-              className="input input-bordered w-full"
+              className="dark:text-black input input-bordered w-full"
               required
             />
           </div>
@@ -303,7 +304,7 @@ const AddTouristsSpot = () => {
               name=""
               defaultValue={user.displayName}
               placeholder="Name"
-              className="input input-bordered w-full"
+              className="dark:text-black input input-bordered w-full"
               required
             />
           </div>

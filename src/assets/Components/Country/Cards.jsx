@@ -1,63 +1,65 @@
-import { PiCurrencyDollarBold } from "react-icons/pi";
+import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import Navbar from "../Navbar/Navbar";
 import { IoLocationOutline } from "react-icons/io5";
+import { TiWeatherPartlySunny } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Cards = ({country}) => {
-    const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = country || {};
+    const {_id,touristsSpotName,countryName,location,averageCost,seasonality,photo} = country || {};
     return (
-        <div className="border py-8">
-            <Navbar></Navbar>
-    <div className="mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row -mx-4">
-            <div className="md:flex-1 px-4">
-                <div className="h-[460px] rounded-lg mb-4">
-                    <img className="w-full h-full object-cover" src={photo} alt="" />
-                </div>
-                
+        <div>
+      <Navbar></Navbar>
+      <div className="dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0 dark:bg-slate-800 bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl h-auto">
+        <img
+          src={photo}
+          alt="Product"
+          className="h-80 w-full object-cover rounded-t-xl"
+        />
+        <div className="px-4 py-3">
+          <span className="text-gray-400 lg:mr-3 uppercase text-xs">
+            {countryName}
+          </span>
+          <p className="dark:text-white text-lg font-bold text-black truncate block capitalize">
+            {touristsSpotName}
+          </p>
+          <div className="flex items-center gap-6">
+            <div className="text-[25px]">
+              <p>
+                <IoLocationOutline />
+              </p>
             </div>
-            <div className="md:flex-1 px-4">
-                <h2 className="text-3xl font-bold mb-2">Tourists Spot Name: {touristsSpotName}</h2>
-                <h3 className="text-xl font-bold mb-2">Country Name: {countryName}</h3>
-
-                <div className="mt-7 flex">
-                <div className="mr-4 mb-5 flex items-center gap-6">
-                        <span className="text-[20px] font-bold "><IoLocationOutline /></span>
-                        <span className="">{location}</span>
-                    </div>
-                    <div className="mr-4 mb-5 flex items-center gap-6">
-                        <span className="font-bold "><PiCurrencyDollarBold /></span>
-                        <span className="">{averageCost}</span>
-                    </div>
-                </div>
-                <div className="mb-4">
-                    <div className="mr-4 mb-5 flex items-center gap-6">
-                        <span className="font-bold ">Seasonality:</span>
-                        <span className="">{seasonality}</span>
-                    </div>
-                    <div className="mr-4 mb-5 flex items-center gap-6">
-                        <span className="font-bold ">Travel Time:</span>
-                        <span className="">{travelTime}</span>
-                    </div>
-
-                    <div className="mr-4 mb-5 flex items-center gap-6">
-                        <span className="font-bold ">Total Visitors Per Year:</span>
-                        <span className="">{totaVisitorsPerYear}</span>
-                    </div>
-                </div>
-
-                
-                
-                <div>
-                    <span className="font-bold"> Description:</span>
-                    <p className="text-sm mt-2">
-                        {shortDescription}
-                    </p>
-                </div>
+            <div className="dark:text-white text-lg text-black cursor-auto my-3">
+              {location}
             </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="text-[25px]">
+              <p>
+                <TiWeatherPartlySunny />
+              </p>
+            </div>
+            <div className="dark:text-white text-lg text-black cursor-auto my-3">
+              {seasonality}
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="text-[25px]">
+              <p>
+                <PiCurrencyDollarSimpleBold />
+              </p>
+            </div>
+            <div className="dark:text-white text-lg text-black cursor-auto my-3">
+              {averageCost}
+            </div>
+          </div>
+
+          <Link to={`/allTouristSpotViewDetails/${_id}`}>
+            <button className="mt-3 btn">View Details</button>
+          </Link>
         </div>
+      </div>
     </div>
-</div>
     );
 };
 

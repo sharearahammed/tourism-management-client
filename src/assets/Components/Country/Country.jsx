@@ -13,7 +13,7 @@ const Country = () => {
         })
     },[])
     return (
-        <div className="mt-24 max-w-7xl mx-auto">
+        <div className="dark:bg-slate-800 dark:text-white mt-24 max-w-7xl mx-auto">
             <h1 className="mb-20 text-4xl font-extrabold text-center">Countrys</h1>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-10">
                 {
