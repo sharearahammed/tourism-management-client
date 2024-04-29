@@ -1,3 +1,7 @@
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 const NextTrip = () => {
   return (
     <section className="mt-20 text-gray-700 body-font">
@@ -8,7 +12,9 @@ const NextTrip = () => {
       <div className="dark:text-white container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4 text-center">
           {/* One */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/LrFNXjk/advanture.webp" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -19,7 +25,9 @@ const NextTrip = () => {
           </div>
 
           {/* two */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/86x41NQ/beach.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -30,7 +38,9 @@ const NextTrip = () => {
           </div>
 
           {/* three */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/JvgRyYn/citytravel.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -41,7 +51,9 @@ const NextTrip = () => {
           </div>
 
           {/* four */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/P1zkRGL/tree.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -52,7 +64,9 @@ const NextTrip = () => {
           </div>
 
           {/* five */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/FWXgCM6/honey-Moon.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -63,7 +77,9 @@ const NextTrip = () => {
           </div>
 
           {/* six */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/qRJLCXt/world-Travel.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -74,7 +90,9 @@ const NextTrip = () => {
           </div>
 
           {/* seven */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/VLFYRC1/culture-travel.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">
@@ -85,7 +103,9 @@ const NextTrip = () => {
           </div>
 
           {/* eight */}
-          <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="p-4 md:w-1/4 sm:w-1/2 w-full">
             <div className="h-[380px] border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
               <img src="https://i.ibb.co/f0kmkbh/wanderlust.jpg" alt="" />
               <h2 className="title-font font-medium text-3xl text-gray-900 dark:text-white">

@@ -3,6 +3,11 @@ import { IoLocationOutline } from "react-icons/io5";
 import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const TouristsSpotsCard = ({ touristsSpot }) => {
   const { _id, touristsSpotName, countryName, location, seasonality,averageCost, photo } =
     touristsSpot;
@@ -10,7 +15,8 @@ const TouristsSpotsCard = ({ touristsSpot }) => {
   console.log(touristsSpot);
   console.log("...................");
   return (
-    <div className="border p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-[675px]">
+    <div data-aos="zoom-in-up"
+    data-aos-duration="2000" className="border p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-[675px]">
       <img
         src={photo}
         alt="Product"
@@ -54,7 +60,7 @@ const TouristsSpotsCard = ({ touristsSpot }) => {
           </div>
         </div>
         <Link to={`/viewDetails/${_id}`}>
-          <button className="bg-[#BC986B] text-white mt-3 btn ">
+          <button  className="animate__animated animate__pulse animate__delay-2s animate__infinite	infinite bg-[#BC986B] text-white mt-3 btn ">
             View Details
           </button>
         </Link>

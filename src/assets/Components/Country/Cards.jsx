@@ -1,5 +1,4 @@
 import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
-import Navbar from "../Navbar/Navbar";
 import { IoLocationOutline } from "react-icons/io5";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { Link } from "react-router-dom";
@@ -14,7 +13,9 @@ const Cards = ({country}) => {
         <title>Roamazing Country Spots</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div className="h-[675px] dark:bg-slate-800 dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0  bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl">
+      <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="h-[675px] dark:bg-slate-800 dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0  bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl">
         <img
           src={photo}
           alt="Product"

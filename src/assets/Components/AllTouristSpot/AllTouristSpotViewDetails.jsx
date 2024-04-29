@@ -5,6 +5,10 @@ import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import { Helmet } from "react-helmet";
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const AllTouristSpotViewDetails = () => {
   const { id } = useParams();
@@ -38,11 +42,16 @@ const AllTouristSpotViewDetails = () => {
       <div className=" dark:bg-slate-800 py-8 mt-14 lg:mt-22 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4">
-            <div className="h-[460px] rounded-lg mb-4">
+            <div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+    data-aos-duration="2000" className="h-[460px] rounded-lg mb-4">
               <img className="w-full h-full object-cover" src={photo} alt="" />
             </div>
           </div>
-          <div className="md:flex-1 px-4">
+          <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="3000" className="md:flex-1 px-4">
             <h2 className="text-3xl font-bold mb-2 dark:text-white ">
               Tourists Spot Name: {touristsSpotName}
             </h2>

@@ -16,7 +16,7 @@ const UpdateTouristsSpot = () => {
     },[id, touristsSpot])
 
     console.log(singleData)
-    const {_id,touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = singleData;
+    const {_id,touristsSpotName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = singleData;
 
     const handleUpdateTouristSpot = e =>{
         e.preventDefault();
