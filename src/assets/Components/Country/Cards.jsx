@@ -10,7 +10,6 @@ const Cards = ({country}) => {
     const {_id,touristsSpotName,countryName,location,averageCost,seasonality,photo} = country || {};
     return (
         <div>
-      <Navbar></Navbar>
       <Helmet>
         <title>Roamazing Country Spots</title>
         <link rel="canonical" href="https://www.tacobell.com/" />

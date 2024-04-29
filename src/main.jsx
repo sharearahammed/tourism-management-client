@@ -36,12 +36,12 @@ const router = createBrowserRouter([
   {
     path: "/updateTouristsSpot/:id",
     element: <UpdateTouristsSpot></UpdateTouristsSpot>,
-    loader: ({params})=> fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`)
+    loader: ({params})=> fetch(`http://localhost:5000/alltouristsSpot/${params.id}`)
   },
   {
     path : "/viewDetails/:id",
     element: <ViewDetails></ViewDetails>,
-    loader: ({params})=>fetch(`https://tourism-management-server-dusky.vercel.app/touristsSpot/${params.id}`)
+    loader: ({params})=>fetch(`http://localhost:5000/touristsSpot/${params.id}`)
   },
   {
     path: "/mylist",
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
   {
     path : "/allTouristSpotViewDetails/:id",
     element: <AllTouristSpotViewDetails></AllTouristSpotViewDetails>,
-    loader: ({params})=>fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`)
+    loader: ({params})=>fetch(`http://localhost:5000/alltouristsSpot/${params.id}`)
   },
   {
     path: '/countryTourismSpot/:id',

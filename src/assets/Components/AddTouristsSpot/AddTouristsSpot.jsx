@@ -11,10 +11,8 @@ const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
   const [countryName, setcountryName] = useState("");
-  const [error, setError] = useState("");
   const handlecountryNameChange = (e) => {
     setcountryName(e.target.value);
-    setError("");
   };
 
   const handleAddTouristSpot = (e) => {
@@ -26,7 +24,8 @@ const AddTouristsSpot = () => {
     const countryName = form.countryName.value;
     const location = form.location.value;
     const shortDescription = form.shortDescription.value;
-    const averageCost = form.averageCost.value;
+    const averageCosts = form.averageCost.value;
+    const averageCost = parseInt(averageCosts)
     const seasonality = form.seasonality.value;
     const travelTime = form.travelTime.value;
     const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
@@ -34,10 +33,6 @@ const AddTouristsSpot = () => {
     const email = user.email;
     const name = user.displayName;
 
-    if (!countryName) {
-      setError("Please select a Country");
-      return;
-    }
     const addtouristsSpot = {
       touristsSpotName,
       countryName,
@@ -55,7 +50,7 @@ const AddTouristsSpot = () => {
     console.log(addtouristsSpot);
 
     fetch(
-      `https://tourism-management-server-dusky.vercel.app/alltouristsSpot`,
+      `http://localhost:5000/alltouristsSpot`,
       {
         method: "POST",
         headers: {
@@ -111,93 +106,18 @@ const AddTouristsSpot = () => {
         </div>
 
         <div className="md:flex gap-4 mb-8">
-          <div className="mt-9">
-            <details className="dropdown">
-              <summary className="m-1 btn bg-red-200 text-gray-700 lg:w-[600px] text-lg font-bold">
-                Country Name <IoIosArrowDown />
-              </summary>
-              <div className="mb-8 flex flex-col p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                <div className="flex flex-col mb-2">
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Bangladesh"
-                      checked={countryName === "Bangladesh"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameBangladesh" className="mr-4">
-                      Bangladesh
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Thailand"
-                      checked={countryName === "Thailand"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameThailand" className="mr-4">
-                      Thailand
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Indonesia"
-                      checked={countryName === "Indonesia"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameIndonesia" className="mr-4">
-                      Indonesia
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Malaysia"
-                      checked={countryName === "Malaysia"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameMalaysia" className="mr-4">
-                      Malaysia
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Vietnam"
-                      checked={countryName === "Vietnam"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameVietnam" className="mr-4">
-                      Vietnam
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="countryName"
-                      value="Cambodia"
-                      checked={countryName === "Cambodia"}
-                      onChange={handlecountryNameChange}
-                      className="mr-2"
-                    />
-                    <label htmlFor="countryNameCambodia">Cambodia</label>
-                  </div>
-                </div>
-                {error && <p className="text-red-500">{error}</p>}
-              </div>
-            </details>
+          <div className="mt-9 flex flex-col">
+          <span className="mb-6">Select Country</span>
+            <div>
+            <select className="p-4 rounded-lg w-full bg-red-200" name="countryName">
+              <option>Bangladesh</option>
+              <option>Thailand</option>
+              <option>Indonesia</option>
+              <option>Malaysia</option>
+              <option>Vietnam</option>
+              <option>Cambodia</option>
+            </select>
+            </div>
           </div>
         </div>
         {/* Form name and quantity row */}
@@ -236,7 +156,7 @@ const AddTouristsSpot = () => {
               <span>Average Cost</span>
             </label>
             <input
-              type="text"
+              type="number"
               name="averageCost"
               placeholder="Cost"
               className="input input-bordered w-full"

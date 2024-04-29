@@ -37,7 +37,7 @@ const UpdateTouristsSpot = () => {
 
         console.log(UpdatetouristsSpot)
 
-        fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${_id}`,{
+        fetch(`http://localhost:5000/alltouristsSpot/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
@@ -75,7 +75,7 @@ const UpdateTouristsSpot = () => {
       <form onSubmit={handleUpdateTouristSpot}>
         {/* Form name and quantity row */}
         <div className="md:flex gap-4 mb-8">
-          <div className="md:w-1/2">
+          <div className="md:w-full">
             <label className="label">
               <span>Tourists Spot Name</span>
             </label>
@@ -88,17 +88,21 @@ const UpdateTouristsSpot = () => {
             />
           </div>
 
-          <div className="md:w-1/2">
-            <label className="label">
-              <span>Country Name</span>
-            </label>
-            <input
-              type="text"
-              name="countryName"
-              placeholder="Country Name"
-              defaultValue={countryName}
-              className="input dark:text-black input-bordered w-full"
-            />
+          
+        </div>
+        <div className="md:flex gap-4 mb-8">
+          <div className="mt-9 flex flex-col">
+          <span className="mb-6">Select Country</span>
+            <div>
+            <select className="p-4 rounded-lg w-full bg-red-200" name="countryName">
+              <option>Bangladesh</option>
+              <option>Thailand</option>
+              <option>Indonesia</option>
+              <option>Malaysia</option>
+              <option>Vietnam</option>
+              <option>Cambodia</option>
+            </select>
+            </div>
           </div>
         </div>
         {/* Form name and quantity row */}
