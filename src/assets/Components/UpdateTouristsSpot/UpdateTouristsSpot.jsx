@@ -37,7 +37,7 @@ const UpdateTouristsSpot = () => {
 
         console.log(UpdatetouristsSpot)
 
-        fetch(`http://localhost:5000/alltouristsSpot/${_id}`,{
+        fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

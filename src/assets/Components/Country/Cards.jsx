@@ -14,7 +14,7 @@ const Cards = ({country}) => {
         <title>Roamazing Country Spots</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <div className="dark:bg-slate-800 dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0  bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl h-auto">
+      <div className="h-[675px] dark:bg-slate-800 dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0  bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl">
         <img
           src={photo}
           alt="Product"

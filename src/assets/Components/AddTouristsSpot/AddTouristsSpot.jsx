@@ -1,8 +1,7 @@
 import Swal from "sweetalert2";
 import Navbar from "../Navbar/Navbar";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
-import { IoIosArrowDown } from "react-icons/io";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import Footer from "../Footer/Footer";
@@ -10,10 +9,6 @@ import Footer from "../Footer/Footer";
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
-  const [countryName, setcountryName] = useState("");
-  const handlecountryNameChange = (e) => {
-    setcountryName(e.target.value);
-  };
 
   const handleAddTouristSpot = (e) => {
     e.preventDefault();
@@ -50,7 +45,7 @@ const AddTouristsSpot = () => {
     console.log(addtouristsSpot);
 
     fetch(
-      `http://localhost:5000/alltouristsSpot`,
+      `https://tourism-management-server-dusky.vercel.app/alltouristsSpot`,
       {
         method: "POST",
         headers: {

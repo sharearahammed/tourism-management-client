@@ -16,7 +16,7 @@ const MyList = () => {
   }
   const { user } = useContext(AuthContext) || {};
   useEffect(() => {
-    fetch(`http://localhost:5000/alltouristsSpot/${user?.email}`)
+    fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -41,7 +41,7 @@ const MyList = () => {
           //   icon: "success"
           // });
           // console.log('delete confirm')
-          fetch(`http://localhost:5000/alltouristsSpot/${id}`,{
+          fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${id}`,{
             method: "DELETE"
         })
         .then(res=>res.json())

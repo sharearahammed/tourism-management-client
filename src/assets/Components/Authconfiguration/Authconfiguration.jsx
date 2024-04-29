@@ -14,6 +14,17 @@ const AuthConfiguration = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
   const gitHubprovider = new GithubAuthProvider();
 
+
+  const [ spotCollection , setSpotCollection ] = useState([]);
+  useEffect(()=>{
+      fetch('https://tourism-management-server-dusky.vercel.app/alltouristsSpot')
+      .then(res=>res.json())
+      .then(data=>{
+          console.log(data);
+          setSpotCollection(data);
+      }) 
+  },[])
+
   const GoogleSignIn = () => {
     return signInWithPopup(auth, googleProvider)
   };
@@ -43,9 +54,9 @@ const AuthConfiguration = ({children}) => {
         return () =>{
             unSubscribe();
         } ;
-    },[reload])
+    },[auth, reload])
 
-    const authInfo = {setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,createUser,signInUser,logOut};
+    const authInfo = { spotCollection , setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,createUser,signInUser,logOut};
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
