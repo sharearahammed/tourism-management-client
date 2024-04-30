@@ -6,7 +6,7 @@ import Navbar from "../Navbar/Navbar";
 
 const CountryTouristSpot = () => {
     const {id} = useParams();
-    console.log(id)
+    // console.log(id)
     const [countrys,setCountrys] = useState([]);
     useEffect(()=>{
         fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${id}`)
@@ -15,7 +15,7 @@ const CountryTouristSpot = () => {
             setCountrys(data)
         })
     },[id])
-    console.log(countrys)
+    // console.log(countrys)
     return (
         <div className="dark:bg-slate-800">
             <Navbar></Navbar>

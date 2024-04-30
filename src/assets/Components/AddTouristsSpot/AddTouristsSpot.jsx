@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleAddTouristSpot = (e) => {
     e.preventDefault();
@@ -105,6 +105,7 @@ const AddTouristsSpot = () => {
           <span className="mb-6">Select Country</span>
             <div>
             <select className="p-4 rounded-lg w-full bg-red-200" name="countryName">
+              <option>Choose Country</option>
               <option>Bangladesh</option>
               <option>Thailand</option>
               <option>Indonesia</option>

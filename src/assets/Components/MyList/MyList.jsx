@@ -19,7 +19,7 @@ const MyList = () => {
     fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setDatas(data);
       });
   }, [user,toggle]);

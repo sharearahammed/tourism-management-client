@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet";
 const ViewDetails = () => {
     const viewTouristsSpots = useLoaderData();
     const {touristsSpotName,countryName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = viewTouristsSpots;
-    console.log(viewTouristsSpots)
+    // console.log(viewTouristsSpots)
 
     return (
         <div className="dark:bg-slate-800 dark:text-white py-8">

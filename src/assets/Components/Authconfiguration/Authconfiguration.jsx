@@ -20,7 +20,7 @@ const AuthConfiguration = ({children}) => {
       fetch('https://tourism-management-server-dusky.vercel.app/alltouristsSpot')
       .then(res=>res.json())
       .then(data=>{
-          console.log(data);
+        //   console.log(data);
           setSpotCollection(data);
       }) 
   },[])
@@ -49,7 +49,7 @@ const AuthConfiguration = ({children}) => {
         const unSubscribe = onAuthStateChanged(auth , currentUser =>{
             setUser(currentUser)
             setLoading(false)
-            console.log('Current User: ',currentUser)
+            // console.log('Current User: ',currentUser)
         })
         return () =>{
             unSubscribe();

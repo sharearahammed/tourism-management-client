@@ -11,9 +11,9 @@ AOS.init();
 const TouristsSpotsCard = ({ touristsSpot }) => {
   const { _id, touristsSpotName, countryName, location, seasonality,averageCost, photo } =
     touristsSpot;
-  console.log("...................");
-  console.log(touristsSpot);
-  console.log("...................");
+  // console.log("...................");
+  // console.log(touristsSpot);
+  // console.log("...................");
   return (
     <div data-aos="zoom-in-up"
     data-aos-duration="2000" className="border p-5 lg:p-0bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl h-[675px]">

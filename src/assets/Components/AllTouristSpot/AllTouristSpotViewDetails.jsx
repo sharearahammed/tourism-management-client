@@ -31,7 +31,7 @@ const AllTouristSpotViewDetails = () => {
     totaVisitorsPerYear,
     photo,
   } = data;
-  console.log(data);
+  // console.log(data);
   return (
     <div className="dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>

@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 
 const UpdateTouristsSpot = () => {
   const{id} = useParams();
-  console.log(id)
+  // console.log(id)
     const touristsSpot = useLoaderData()
     const [ singleData , setSingleData ]= useState({})
     useEffect(()=>{
@@ -15,7 +15,7 @@ const UpdateTouristsSpot = () => {
       setSingleData(singleData)
     },[id, touristsSpot])
 
-    console.log(singleData)
+    // console.log(singleData)
     const {_id,touristsSpotName,location,shortDescription,averageCost,seasonality,travelTime,totaVisitorsPerYear,photo} = singleData;
 
     const handleUpdateTouristSpot = e =>{

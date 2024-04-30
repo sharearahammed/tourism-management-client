@@ -12,22 +12,22 @@ const AllTouristSpot = () => {
 
   const handleDescendingSort = () => {
     const descending = spotCollection.sort((a, b) => b.averageCost - a.averageCost);
-    console.log("-------------------", descending);
+    // console.log("-------------------", descending);
     setDatas(descending);
   };
 
-  console.log(spotCollection);
+  // console.log(spotCollection);
 
   useEffect(() => {
     fetch("https://tourism-management-server-dusky.vercel.app/alltouristsSpot")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setDatas(data);
       });
   }, []);
 
-  console.log(datas);
+  // console.log(datas);
   return (
     <div className="dark:bg-slate-800">
       <Navbar></Navbar>

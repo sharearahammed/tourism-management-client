@@ -7,7 +7,7 @@ const HomeTouristsSpots = () => {
         fetch(`https://tourism-management-server-dusky.vercel.app/touristsSpot`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             setTouristsSpots(data)
         })
     },[])

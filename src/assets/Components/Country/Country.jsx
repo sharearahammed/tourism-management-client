@@ -8,7 +8,7 @@ const Country = () => {
         fetch('https://tourism-management-server-dusky.vercel.app/country')
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             setCountrys(data)
         })
     },[])
