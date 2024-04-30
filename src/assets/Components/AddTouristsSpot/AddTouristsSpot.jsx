@@ -1,17 +1,20 @@
 import Swal from "sweetalert2";
 import Navbar from "../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import Footer from "../Footer/Footer";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
+  const [error,setError]=useState('');
   // console.log(user);
 
   const handleAddTouristSpot = (e) => {
     e.preventDefault();
+
+    setError("");
 
     const form = e.target;
 
@@ -27,6 +30,9 @@ const AddTouristsSpot = () => {
     const photo = form.photo.value;
     const email = user.email;
     const name = user.displayName;
+    // if(countryName){
+    //   s
+    // }
 
     const addtouristsSpot = {
       touristsSpotName,
@@ -42,36 +48,47 @@ const AddTouristsSpot = () => {
       name,
     };
 
-    console.log(addtouristsSpot);
+    // console.log(addtouristsSpot);
 
-    fetch(
-      `https://tourism-management-server-dusky.vercel.app/alltouristsSpot`,
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(addtouristsSpot),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Tourists Spot Added Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        } else {
-          toast.error("Added Failed")
+    
+    if(countryName != 'Choose Country'){
+      fetch(
+        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(addtouristsSpot),
         }
-      });
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.insertedId) {
+            Swal.fire({
+              title: "Success!",
+              text: "Tourists Spot Added Successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          } else {
+            toast.error("Added Failed")
+            
+          }
+        });
+        
+    }
+    else{
+      // console.log("------------------------please")
+      toast.error("Please Select Your Country!")
+    }
+    
   };
 
   return (
     <div className="dark:bg-slate-800 dark:text-white">
+      <ToastContainer />
       <Navbar></Navbar>
       <div className=" dark:bg-slate-800 dark:text-white bg-[#F4F3F0] mt-20 p-3 lg:p-24">
       
@@ -115,6 +132,7 @@ const AddTouristsSpot = () => {
             </select>
             </div>
           </div>
+          {error && <p>Added Failed</p>}
         </div>
         {/* Form name and quantity row */}
         <div className="md:flex gap-4 mb-8">
