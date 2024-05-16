@@ -31,35 +31,64 @@ const router = createBrowserRouter([
   },
   {
     path: "/addAllTouristsSpot",
-    element: <PrivatePortes><AddTouristsSpot></AddTouristsSpot></PrivatePortes> 
+    element: (
+      <PrivatePortes>
+        <AddTouristsSpot></AddTouristsSpot>
+      </PrivatePortes>
+    ),
   },
   {
     path: "/updateTouristsSpot/:id",
-    element: <PrivatePortes><UpdateTouristsSpot></UpdateTouristsSpot></PrivatePortes>,
-    loader: ({params})=> fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`)
+    element: (
+      <PrivatePortes>
+        <UpdateTouristsSpot></UpdateTouristsSpot>
+      </PrivatePortes>
+    ),
+    loader: ({ params }) =>
+      fetch(
+        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`
+      ),
   },
   {
-    path : "/viewDetails/:id",
-    element: <PrivatePortes><ViewDetails></ViewDetails></PrivatePortes>,
-    loader: ({params})=>fetch(`https://tourism-management-server-dusky.vercel.app/touristsSpot/${params.id}`)
+    path: "/viewDetails/:id",
+    element: (
+      <PrivatePortes>
+        <ViewDetails></ViewDetails>
+      </PrivatePortes>
+    ),
+    loader: ({ params }) =>
+      fetch(
+        `https://tourism-management-server-dusky.vercel.app/touristsSpot/${params.id}`
+      ),
   },
   {
     path: "/mylist",
-    element: <PrivatePortes><MyList></MyList></PrivatePortes> 
+    element: (
+      <PrivatePortes>
+        <MyList></MyList>
+      </PrivatePortes>
+    ),
   },
   {
     path: "/allTouristSpot",
-    element: <AllTouristSpot></AllTouristSpot>
+    element: <AllTouristSpot></AllTouristSpot>,
   },
   {
-    path : "/allTouristSpotViewDetails/:id",
-    element: <PrivatePortes><AllTouristSpotViewDetails></AllTouristSpotViewDetails></PrivatePortes>,
-    loader: ({params})=>fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`)
+    path: "/allTouristSpotViewDetails/:id",
+    element: (
+      <PrivatePortes>
+        <AllTouristSpotViewDetails></AllTouristSpotViewDetails>
+      </PrivatePortes>
+    ),
+    loader: ({ params }) =>
+      fetch(
+        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`
+      ),
   },
   {
-    path: '/countryTourismSpot/:id',
-    element: <CountryTouristSpot></CountryTouristSpot>
-  }
+    path: "/countryTourismSpot/:id",
+    element: <CountryTouristSpot></CountryTouristSpot>,
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
