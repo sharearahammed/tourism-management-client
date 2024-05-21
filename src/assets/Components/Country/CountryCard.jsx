@@ -12,7 +12,7 @@ const CountryCard = ({country}) => {
     data-aos-easing="ease-out-cubic"
    data-aos-duration="2000" className="rounded-lg">
       <Link to={`/countryTourismSpot/${countryName}`}>
-      <div className="rounded-lg card bg-base-100 shadow-xl image-full">
+      <div className="lg:h-[265px] rounded-lg card bg-base-100 shadow-xl image-full">
   <img className="h-full w-full rounded-lg" src={photo} alt="country" />
   <div className="rounded-lg card-body">
     <h2 className="card-title">{countryName}</h2>
@@ -26,3 +26,4 @@ const CountryCard = ({country}) => {
 };
 
 export default CountryCard;
+

@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 const Register = () => {
   const {user} = useContext(AuthContext)
@@ -17,16 +18,25 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     // const cpassword = e.target.cpassword.value;
     const accepcted = e.target.terms.checked;
-    const upload = e.target.upload.value;
+    const upload = e.target.upload.files[0];
+    const formdata = new FormData();
+    formdata.append("image", upload);
     console.log(name, upload, email, password, accepcted);
 
+    const {data}  = await axios.post(
+      `https://api.imgbb.com/1/upload?key=${
+        import.meta.env.VITE_IMGBB_API_KEY
+      }`,
+      formdata
+    );
+    console.log(data.data.display_url)
     // reset error
     setError("");
     // reset success
@@ -61,7 +71,7 @@ const Register = () => {
         // Update profile
         updateProfile(result.user, {
           displayName: name,
-          photoURL: upload,
+          photoURL: data.data.display_url,
         })
           .then(() => console.log("profile updated"))
           .catch();
@@ -123,12 +133,12 @@ const Register = () => {
             </div>
 
             <div>
-              <label className="text-white text-sm mb-2 block">Photo Url</label>
+              <label className="text-white text-sm mb-2 block">Photo</label>
               <input
                 name="upload"
-                type="text"
-                className="bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-blue-500"
-                placeholder="Give your photo url"
+                type="file"
+                className=""
+                accept="image/*"
                 required
               />
             </div>

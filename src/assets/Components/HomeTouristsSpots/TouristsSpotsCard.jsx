@@ -3,15 +3,22 @@ import { IoLocationOutline } from "react-icons/io5";
 import { PiCurrencyDollarSimpleBold } from "react-icons/pi";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { Link } from "react-router-dom";
-import 'animate.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
 AOS.init();
 
 const TouristsSpotsCard = ({ touristsSpot }) => {
-  const { _id, touristsSpotName, countryName, location, seasonality, averageCost, photo } =
-    touristsSpot;
+  const {
+    _id,
+    touristsSpotName,
+    countryName,
+    location,
+    seasonality,
+    averageCost,
+    photo,
+  } = touristsSpot;
 
   return (
     <div
@@ -25,39 +32,55 @@ const TouristsSpotsCard = ({ touristsSpot }) => {
         className="h-80 w-full object-cover rounded-t-xl"
       />
       <div className="flex flex-col flex-grow px-4 py-3">
-        <span className="text-gray-400 lg:mr-3 uppercase text-xs">
+        <span
+          data-aos="fade-up-left"
+          data-aos-duration="2000"
+          className="text-gray-400 lg:mr-3 uppercase text-xs"
+        >
           {countryName}
         </span>
-        <p className="dark:text-white text-lg font-bold text-black truncate block capitalize">
+        <p
+          data-aos="fade-up-left"
+          data-aos-duration="2000"
+          className=" text-lg font-bold text-black truncate block capitalize"
+        >
           {touristsSpotName}
         </p>
-        <div className="flex items-center gap-6">
+        <div
+          data-aos="fade-up-left"
+          data-aos-duration="2000"
+          className="flex items-center gap-6"
+        >
           <div className="text-[25px]">
-            <p>
+            <p className="text-black">
               <IoLocationOutline />
             </p>
           </div>
-          <div className="text-lg text-black cursor-auto my-3 dark:text-white ">
+          <div className="text-lg text-black cursor-auto my-3  ">
             {location}
           </div>
         </div>
-        <div className="flex items-center gap-6">
+        <div
+          data-aos="fade-up-left"
+          data-aos-duration="2000"
+          className="flex items-center gap-6"
+        >
           <div className="text-[25px]">
-            <p>
+            <p className="text-black">
               <TiWeatherPartlySunny />
             </p>
           </div>
-          <div className="text-lg text-black cursor-auto my-3 dark:text-white ">
+          <div className="text-lg text-black cursor-auto my-3  ">
             {seasonality}
           </div>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-[25px]">
-            <p>
+            <p className="text-black">
               <PiCurrencyDollarSimpleBold />
             </p>
           </div>
-          <div className="dark:text-white text-lg text-black cursor-auto my-3">
+          <div className=" text-lg text-black cursor-auto my-3">
             {averageCost}
           </div>
         </div>

@@ -8,12 +8,14 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { ImSpinner9 } from "react-icons/im";
 
 const Login = () => {
-  const { setReload, signInUser, setUser, GoogleSignIn, GitHubSignIn } =
+  const { resetPassword,setReload, signInUser, setUser, GoogleSignIn, GitHubSignIn, loading, setLoading } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [ email , setEmail ] = useState('');
 
   const handleGoogleSignIn = () => {
     GoogleSignIn()
@@ -48,16 +50,32 @@ const Login = () => {
     // Login user
     signInUser(email, password)
       .then((result) => {
+        setLoading(true);
         console.log(result.user);
         navigate("/");
         setReload(true);
         toast.success("User Login Successfully");
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error.message);
         toast.error("The email or password that you entered is Incorrect ");
+        setLoading(false);
       });
   };
+
+  const handleResetPassword = async ()=>{
+    if(!email) return toast.error('Please write your email first!')
+    try{
+      await resetPassword(email)
+      toast.success("Request success! Check yout email for further process...");
+      setLoading(false);
+    }catch(err){
+      console.log(err.message)
+      toast.error(err.message)
+    }
+    console.log(email);
+  }
 
   return (
     <div className="dark:bg-slate-800">
@@ -90,6 +108,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
+                  onBlur={e=>setEmail(e.target.value)}
                   placeholder="email"
                   className="text-white bg-transparent border border-whites w-full text-sm px-4 py-3 rounded-md outline-blue-500"
                   required
@@ -115,16 +134,25 @@ const Login = () => {
                   </span>
                 </div>
                 <label className="label">
-                  <a
-                    href="#"
+                  <button 
+                  onClick={handleResetPassword}
+                    
                     className="text-white label-text-alt link link-hover"
                   >
                     Forgot password?
-                  </a>
+                  </button>
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button 
+                
+                className="btn btn-primary">
+                {loading ? (
+                <ImSpinner9 className="animate-spin m-auto text-2xl" />
+              ) : (
+                "Login"
+              )}
+                </button>
               </div>
               <p className="text-white">
                 Do not have an account? Please{" "}
@@ -142,13 +170,17 @@ const Login = () => {
               </h3>
             </form>
             <div className="flex flex-col p-2 gap-2">
-              <button onClick={handleGoogleSignIn} className="btn">
+              <button 
+              
+              onClick={handleGoogleSignIn} className="btn">
                 <p className="text-xl flex items-center gap-3">
                   <img className="h-7 w-7" src="/google.svg" alt="" />
                   Google
                 </p>
               </button>
-              <button onClick={handleGithubSignIn} className="btn">
+              <button
+              
+               onClick={handleGithubSignIn} className="btn">
                 <p className="text-xl flex items-center gap-3">
                   <img className="h-7 w-7" src="/github.svg" alt="" />
                   Github

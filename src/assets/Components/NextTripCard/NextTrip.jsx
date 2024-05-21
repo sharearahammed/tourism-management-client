@@ -6,8 +6,10 @@ const NextTrip = () => {
   return (
     <section className="mt-20 text-gray-700 body-font">
         <div className="dark:text-white p-6">
-        <h1 className="text-4xl font-extrabold text-center">Find Inspiration For <br /> Your Next Trip</h1>
-        <p className="mt-3 text-center">Seeking inspiration for your next adventure? Look no further! Dive into a world of wanderlust <br /> with our curated collection of travel guides, destination highlights, and insider tips. Whether <br /> you're craving a tropical getaway, a cultural immersion, or an adrenaline-fueled escapade, <br /> we've got you covered. Let us ignite your wanderlust and inspire your next unforgettable journey</p>
+        <h1 data-aos="zoom-in-down"
+      data-aos-duration="2000" className="text-2xl lg:text-4xl font-extrabold text-center">Find Inspiration For <br /> Your Next Trip</h1>
+        <p data-aos="zoom-in-down"
+      data-aos-duration="2000" className="mt-3 text-center">Seeking inspiration for your next adventure? Look no further! Dive into a world of wanderlust <br /> with our curated collection of travel guides, destination highlights, and insider tips. Whether <br /> you're craving a tropical getaway, a cultural immersion, or an adrenaline-fueled escapade, <br /> we've got you covered. Let us ignite your wanderlust and inspire your next unforgettable journey</p>
         </div>
       <div className="dark:text-white container px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4 text-center">

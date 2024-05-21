@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import app from "../../../firebase.config";
@@ -41,6 +41,12 @@ const AuthConfiguration = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
+
+    const resetPassword = email => {
+        setLoading(true)
+        return sendPasswordResetEmail(auth, email)
+      }
+
     const logOut = () =>{
         return signOut(auth)
     }
@@ -56,7 +62,7 @@ const AuthConfiguration = ({children}) => {
         } ;
     },[auth, reload])
 
-    const authInfo = { spotCollection , setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,createUser,signInUser,logOut};
+    const authInfo = { spotCollection , setReload,GitHubSignIn,GoogleSignIn,setUser,user,loading,setLoading,createUser,signInUser,resetPassword,logOut};
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

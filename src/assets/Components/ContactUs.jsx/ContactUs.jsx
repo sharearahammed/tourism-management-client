@@ -3,7 +3,8 @@ const ContactUs = () => {
     return (
         <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-            <h1 className="text-center font-extrabold text-4xl">Contact Us</h1>
+            <h1 data-aos="zoom-in-down"
+      data-aos-duration="2000" className="text-center font-extrabold text-3xl lg:text-5xl">Contact Us</h1>
             <p className="mt-3 text-center"></p>
             </div>
             <section className="bg-[url('https://i.ibb.co/sR71CC7/tourism-Contact-Cover.jpg')] min-h-screen bg-cover rounded-lg">
