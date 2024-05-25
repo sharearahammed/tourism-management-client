@@ -5,13 +5,16 @@ import { AuthContext } from "../Authconfiguration/Authconfiguration";
 import { ToastContainer, toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const [imagePreview, setImagePreview] = useState();
+  const [imageText, setImageText] = useState();
   // console.log(user);
 
-  const handleAddTouristSpot = (e) => {
+  const handleAddTouristSpot = async (e) => {
     e.preventDefault();
 
     setError("");
@@ -27,9 +30,17 @@ const AddTouristsSpot = () => {
     const seasonality = form.seasonality.value;
     const travelTime = form.travelTime.value;
     const totaVisitorsPerYear = form.totaVisitorsPerYear.value;
-    const photo = form.photo.value;
+    const photo = form.photo.files[0];
+    const formData = new FormData();
+    formData.append("image", photo);
     const email = user.email;
     const name = user.displayName;
+    const { data } = await axios.post(
+      `https://api.imgbb.com/1/upload?key=${
+        import.meta.env.VITE_IMGBB_API_KEY
+      }`,
+      formData
+    );
     // if(countryName){
     //   s
     // }
@@ -43,7 +54,7 @@ const AddTouristsSpot = () => {
       seasonality,
       travelTime,
       totaVisitorsPerYear,
-      photo,
+      photo: data.data.display_url,
       email,
       name,
     };
@@ -79,6 +90,12 @@ const AddTouristsSpot = () => {
       // console.log("------------------------please")
       toast.error("Please Select Your Country!");
     }
+  };
+
+  // handle image change
+  const handleImage = (image) => {
+    setImagePreview(URL.createObjectURL(image));
+    setImageText(image.name);
   };
 
   return (
@@ -219,7 +236,7 @@ const AddTouristsSpot = () => {
           </div>
 
           {/* Form name and quantity row */}
-          <div className="md:flex gap-4 mb-8">
+          <div className="md:flex gap-4">
             <div className="md:w-1/2">
               <label className="label">
                 <span>User Email</span>
@@ -251,17 +268,26 @@ const AddTouristsSpot = () => {
 
           {/* Form name and quantity row */}
           <div className="md:flex gap-4 mb-8">
-            <div className="md:w-full">
-              <label className="label">
-                <span>Photo URL</span>
+            <div className="flex items-center md:w-full">
+              <label>
+                <input
+                  className="text-sm cursor-pointer w-36 hidden"
+                  type="file"
+                  onChange={(e) => {
+                    handleImage(e.target.files[0]);
+                  }}
+                  name="photo"
+                  accept="image/*"
+                  placeholder="Photo Url"
+                  required
+                />
+                <div className="justify-center h-16 w-16 object-cover overflow-hidden flex items-center">
+                  {imagePreview && <img src={imagePreview} />}
+                </div>
+                <div className="bg-rose-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-rose-500">
+                  {imageText ? imageText : "Upload Image"}
+                </div>
               </label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Photo Url"
-                className="input input-bordered w-full"
-                required
-              />
             </div>
           </div>
 
