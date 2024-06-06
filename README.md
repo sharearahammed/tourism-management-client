@@ -6,7 +6,7 @@ Welcome to My Roamazing Website!
 
 You can visit the live site [here](https://roamazing-tourism-management.netlify.app).
 
-## Features and Characteristics
+## Features and Characteristics 
 
 - User-friendly interface: Our website offers an intuitive and easy-to-navigate interface, ensuring a smooth user experience for visitors of all levels.
 - Responsive design: My Roamazing Website is fully various devices and screen sizes, including smartphones, tablets, and desktops.
