@@ -4,7 +4,7 @@ Welcome to My Roamazing Website!
 
 ## Live Site
 
-You can visit the live site [here](https://stately-alfajores-f0a540.netlify.app).
+You can visit the live site [here](https://roamazing-tourism-management.netlify.app).
 
 ## Features and Characteristics
 

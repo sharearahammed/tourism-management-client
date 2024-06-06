@@ -9,7 +9,7 @@ const CountryTouristSpot = () => {
     // console.log(id)
     const [countrys,setCountrys] = useState([]);
     useEffect(()=>{
-        fetch(`https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${id}`)
+        fetch(`http://localhost:5000/alltouristsSpot/${id}`)
         .then(res=>res.json())
         .then(data=>{
             setCountrys(data)

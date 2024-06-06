@@ -1,88 +1,107 @@
-import { useContext } from 'react';
-import { useLoaderData } from 'react-router';
-import { AuthContext } from '../Authconfiguration/Authconfiguration';
+import { useParams } from "react-router-dom";
+import { IoLocationOutline } from "react-icons/io5";
+import { PiCurrencyDollarBold } from "react-icons/pi";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
+import { Slide } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
 
+const AllTouristSpotViewDetails = () => {
+  const {id} = useParams();
+  const [touristsSpots , setTouristsSpots] = useState([]);
+  useEffect(()=>{
+      fetch(`http://localhost:5000/alltouristsSpot/${id}`)
+      .then(res=>res.json())
+      .then(data=>{
+          // console.log(data)
+          setTouristsSpots(data)
+      })
+  },[id])
+  console.log(touristsSpots)
+  console.log(id);
+  const {
+    touristsSpotName,
+    countryName,
+    location,
+    shortDescription,
+    averageCost,
+    seasonality,
+    travelTime,
+    totaVisitorsPerYear,
+    photo, 
+  } = touristsSpots[0] || {};
+  // console.log(viewTouristsSpots)
 
-const BookService = () => {
-    const service = useLoaderData();
-    const { title, _id, price, img } = service;
-    const {user} = useContext(AuthContext);
-
-    const handleBookService = event =>{
-        event.preventDefault();
-
-        const form = event.target;
-        const name = form.name.value;
-        const date = form.date.value;
-        const email = user?.email;
-        const booking = {
-            customerName: name, 
-            email, 
-            img,
-            date, 
-            service: title,
-            service_id: _id, 
-            price: price
-        }
-
-        console.log(booking);
-
-        fetch('http://localhost:5000/bookings', {
-            method: 'POST', 
-            headers: {
-                'content-type': 'application/json'
-            }, 
-            body: JSON.stringify(booking)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                alert('service book successfully')
-            }
-        })
-
-    }
-
-    return (
-        <div>
-            <h2 className='text-center text-3xl'>Book Service: {title} </h2>
-            <form onSubmit={handleBookService}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Name</span>
-                        </label>
-                        <input type="text" defaultValue={user?.displayName} name="name" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Date</span>
-                        </label>
-                        <input type="date" name="date" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Email</span>
-                        </label>
-                        <input type="text" name="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
-                    </div>
-                    <div className="form-control">
-                        <label className="label">
-                            <span className="label-text">Due amount</span>
-                        </label>
-                        <input type="text" defaultValue={'$'+ price} className="input input-bordered" />
-                    </div>
-                </div>
-                <div className="form-control mt-6">
-                    <input className="btn btn-primary btn-block" type="submit" value="Order Confirm" />
-                </div>
-            </form>
-            <div className="card-body">
-
+  return (
+    <div className="dark:bg-slate-800 dark:text-white py-8">
+      <Navbar></Navbar>
+      <Helmet>
+        <title>Roamazing Spot Details</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+      <Slide>
+        <div className="mt-14 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row -mx-4">
+            <div className="md:flex-1 px-4">
+              <div className="h-[460px] rounded-lg mb-4">
+                <img
+                  className="w-full h-full object-cover"
+                  src={photo}
+                  alt=""
+                />
+              </div>
             </div>
+            <div className="md:flex-1 px-4">
+              <h2 className="text-3xl font-bold mb-2">
+                Tourists Spot Name: {touristsSpotName}
+              </h2>
+              <h3 className="text-xl font-bold mb-2">
+                Country Name: {countryName}
+              </h3>
+
+              <div className="mt-7 flex">
+                <div className="mr-4 mb-5 flex items-center gap-6">
+                  <span className="text-[20px] font-bold ">
+                    <IoLocationOutline />
+                  </span>
+                  <span className="">{location}</span>
+                </div>
+                <div className="mr-4 mb-5 flex items-center gap-6">
+                  <span className="font-bold ">
+                    <PiCurrencyDollarBold />
+                  </span>
+                  <span className="">{averageCost}</span>
+                </div>
+              </div>
+              <div className="mb-4">
+                <div className="mr-4 mb-5 flex items-center gap-6">
+                  <span className="font-bold ">Seasonality:</span>
+                  <span className="">{seasonality}</span>
+                </div>
+                <div className="mr-4 mb-5 flex items-center gap-6">
+                  <span className="font-bold ">Travel Time:</span>
+                  <span className="">{travelTime}</span>
+                </div>
+
+                <div className="mr-4 mb-5 flex items-center gap-6">
+                  <span className="font-bold ">Total Visitors Per Year:</span>
+                  <span className="">{totaVisitorsPerYear}</span>
+                </div>
+              </div>
+
+              <div>
+                <span className="font-bold"> Description:</span>
+                <p className="text-sm mt-2">{shortDescription}</p>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </Slide>
+
+      <Footer></Footer>
+    </div>
+  );
 };
 
-export default BookService;
+export default AllTouristSpotViewDetails;

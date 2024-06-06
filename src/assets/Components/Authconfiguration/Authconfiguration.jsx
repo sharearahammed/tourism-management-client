@@ -17,7 +17,7 @@ const AuthConfiguration = ({children}) => {
 
   const [ spotCollection , setSpotCollection ] = useState([]);
   useEffect(()=>{
-      fetch('https://tourism-management-server-dusky.vercel.app/alltouristsSpot')
+      fetch('http://localhost:5000/alltouristsSpot')
       .then(res=>res.json())
       .then(data=>{
         //   console.log(data);

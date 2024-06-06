@@ -63,7 +63,7 @@ const AddTouristsSpot = () => {
 
     if (countryName != "Choose Country") {
       fetch(
-        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot`,
+        `http://localhost:5000/alltouristsSpot`,
         {
           method: "POST",
           headers: {

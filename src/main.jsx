@@ -13,8 +13,8 @@ import ViewDetails from "./assets/Components/HomeTouristsSpots/ViewDetails.jsx";
 import PrivatePortes from "./assets/Components/PrivatePortes/PrivatePortes.jsx";
 import MyList from "./assets/Components/MyList/MyList.jsx";
 import AllTouristSpot from "./assets/Components/AllTouristSpot/AllTouristSpot.jsx";
-import AllTouristSpotViewDetails from "./assets/Components/AllTouristSpot/AllTouristSpotViewDetails.jsx";
 import CountryTouristSpot from "./assets/Components/Country/CountryTouristSpot.jsx";
+import AllTouristSpotViewDetails from "./assets/Components/AllTouristSpot/AllTouristSpotViewDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
     ),
     loader: ({ params }) =>
       fetch(
-        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`
+        `http://localhost:5000/alltouristsSpot/${params.id}`
       ),
   },
   {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
     ),
     loader: ({ params }) =>
       fetch(
-        `https://tourism-management-server-dusky.vercel.app/touristsSpot/${params.id}`
+        `http://localhost:5000/touristsSpot/${params.id}`
       ),
   },
   {
@@ -75,15 +75,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/allTouristSpotViewDetails/:id",
-    element: (
+    element: 
       <PrivatePortes>
-        <AllTouristSpotViewDetails></AllTouristSpotViewDetails>
+        <AllTouristSpotViewDetails />
       </PrivatePortes>
-    ),
-    loader: ({ params }) =>
-      fetch(
-        `https://tourism-management-server-dusky.vercel.app/alltouristsSpot/${params.id}`
-      ),
+    
   },
   {
     path: "/countryTourismSpot/:id",

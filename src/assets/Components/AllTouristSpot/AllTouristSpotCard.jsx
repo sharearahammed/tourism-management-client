@@ -15,6 +15,7 @@ const AllTouristSpotCard = ({ data }) => {
     seasonality,
     photo,
   } = data;
+  console.log(data)
   return (
     <div>
       <div className="h-[675px] dark:text-white mt-16 md:mt-20 lg:mt-24 p-5 lg:p-0 dark:bg-slate-800 bg-white shadow-md rounded-xl duration-500 border border-white hover:scale-105 hover:shadow-xl ">
